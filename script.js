@@ -3,7 +3,7 @@ let fields = [];
 let currentShape = 'cross'
 
 function fillShape(id) {
-
+if (!fields[id]) {
     if (currentShape == 'cross') {
         currentShape = 'circle';
         document.getElementById('player-2').classList.remove('player-inactive');
@@ -18,6 +18,7 @@ function fillShape(id) {
     fields[id] = currentShape;
     draw();
     checkForWin();
+}
 }
 
 function draw() {
